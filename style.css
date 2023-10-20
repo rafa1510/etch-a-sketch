@@ -23,8 +23,8 @@ body {
 
 button {
     width: 801px;
-    margin-top: 2%;
-    margin-bottom: 0.5%;
+    margin-top: 50px;
+    margin-bottom: 25px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
