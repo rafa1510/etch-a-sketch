@@ -24,6 +24,8 @@ const button = document.querySelector("#button");
 
 let promptValue = 16; // Default amount of squares is 16
 
+let hovering = false;
+
 // Initial 16x16 grid creation
 createDivs(promptValue)
 
@@ -67,6 +69,31 @@ function createDivs(currentPromptValue) {
         let dynamicDiv = document.createElement("div");
         dynamicDiv.setAttribute("class", "dynamicDiv");
         dynamicDiv.setAttribute("style", `height: ${dynamicPx}px; width: ${dynamicPx}px;`);
+
+        // Adds hover effect on mouse movement over div
+
+        dynamicDiv.addEventListener("mouseup", () => {
+            hovering = false;
+        }
+        )
+
+        dynamicDiv.addEventListener("mousedown", () => {
+            hovering = true
+            if (hovering)
+            {
+                dynamicDiv.setAttribute("class", "dynamicDiv hover")
+            }
+        }
+        )
+
+        dynamicDiv.addEventListener("mouseover", () => {
+            if (hovering)
+            {
+                dynamicDiv.setAttribute("class", "dynamicDiv hover")
+            }
+        }
+        )
+
         container.appendChild(dynamicDiv);
     }
 }

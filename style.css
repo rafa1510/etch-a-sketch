@@ -44,3 +44,7 @@ button {
     border-width: 0.5px;
     box-sizing: border-box;
 }
+
+.hover {
+    background-color: black;
+}
