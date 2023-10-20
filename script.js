@@ -19,11 +19,22 @@
 
 */
 
+const container = document.querySelector("#container");
 const button = document.querySelector("#button");
 
 let promptValue = 16; // Default amount of squares is 16
 
+// Initial 16x16 grid creation
+createDivs(promptValue)
+
 button.addEventListener("click", () => {
+    // Loop deleting the current squares in the container
+    for (let i = 0; i < promptValue; i++)
+    {
+        let currentDivs = document.querySelectorAll(".dynamicDiv");
+        currentDivs.forEach((dynamicDiv) => container.removeChild(dynamicDiv));
+    }
+
     // Prompts the user for a number and turns it into an integer
     promptValue = parseInt(prompt("How many squares per row and column would you like?"));
 
@@ -43,4 +54,19 @@ button.addEventListener("click", () => {
             promptValue = parseInt(prompt("Please enter a number"));
         }
     }
+    createDivs(promptValue);
 })
+
+// Main function taking in the user's desired grid number per row and column
+function createDivs(currentPromptValue) {
+    let totalDivs = currentPromptValue * currentPromptValue;
+    let dynamicPx = 800 / currentPromptValue;
+    
+    for (let i = 0; i < totalDivs; i++)
+    {
+        let dynamicDiv = document.createElement("div");
+        dynamicDiv.setAttribute("class", "dynamicDiv");
+        dynamicDiv.setAttribute("style", `height: ${dynamicPx}px; width: ${dynamicPx}px;`);
+        container.appendChild(dynamicDiv);
+    }
+}

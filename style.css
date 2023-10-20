@@ -22,8 +22,12 @@ body {
 }
 
 button {
-    width: 800px;
+    width: 801px;
     margin-top: 2%;
+    margin-bottom: 0.5%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
 #container {
@@ -32,6 +36,11 @@ button {
     height: 800px;
     width: 800px;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.5px;
+}
+
+.dynamicDiv {
+    border-style: solid;
+    border-width: 0.5px;
     box-sizing: border-box;
 }
